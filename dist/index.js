@@ -1,12 +1,12 @@
 import { WebSocketServer } from "ws";
 const wss = new WebSocketServer({ port: 8081 });
-let c = 0;
+let arr = [];
 wss.on("connection", function (socket) {
-    c++;
-    console.log("user count is :" + c);
+    arr.push(socket);
     socket.on("message", function (e) {
-        console.log(e.toString());
-        socket.send(e.toString() + "sent from server");
+        arr.forEach(function (a) {
+            a.send(e.toString());
+        });
     });
 });
 //# sourceMappingURL=index.js.map
