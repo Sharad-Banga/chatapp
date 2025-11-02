@@ -10,7 +10,7 @@ wss.on("connection",function(socket){
   socket.on("message",function(message){
 
     //@ts-ignore
-    const parsedMessage = JSON.parse(message);
+    const parsedMessage = JSON.parse(message.toString());
     
     if(parsedMessage.type == "join"){
         arr.push({
@@ -22,7 +22,7 @@ wss.on("connection",function(socket){
         
     }
 
-    if(parsedMessage.type = "chat"){
+    if(parsedMessage.type === "chat"){
 
       let currentRoom ;
       

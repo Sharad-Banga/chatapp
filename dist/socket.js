@@ -10,8 +10,9 @@ wss.on("connection", function (socket) {
                 socket,
                 room_id: parsedMessage.payload.room_id
             });
+            console.log(arr);
         }
-        if (parsedMessage.type = "chat") {
+        if (parsedMessage.type === "chat") {
             let currentRoom;
             for (let i = 0; i < arr.length; i++) {
                 if (arr[i]?.socket == socket) {
