@@ -20,7 +20,7 @@ wss.on("connection", function (socket) {
             }
             for (let i = 0; i < arr.length; i++) {
                 if (arr[i]?.room_id == currentRoom) {
-                    arr[i]?.socket.send(message + "ssssss");
+                    arr[i]?.socket.send(parsedMessage.payload.message + "ssssss");
                 }
             }
         }

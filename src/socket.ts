@@ -17,6 +17,9 @@ wss.on("connection",function(socket){
           socket,
           room_id : parsedMessage.payload.room_id
         })
+
+        console.log(arr);
+        
     }
 
     if(parsedMessage.type = "chat"){
